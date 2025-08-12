@@ -14,15 +14,15 @@ const bands = [
 	'An Old Dog'
 ];
 
-// Function to remove leading articles
+// Remove leading articles
 function stripArticle(bandName) {
 	return bandName.replace(/^(a |an |the )/i, '').trim();
 }
 
-// Sort bands ignoring articles
+// Sort ignoring articles
 const sortedBands = bands.sort((a, b) => stripArticle(a).localeCompare(stripArticle(b)));
 
-// Display in the UL
-document.getElementById('band').innerHTML = sortedBands
+// Display in UL
+document.getElementById('bands').innerHTML = sortedBands
 	.map(band => `<li>${band}</li>`)
 	.join('');
